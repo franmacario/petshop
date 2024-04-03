@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Animais</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Gerenciamento de Animais</h1>
+
+<h2>Lista de Animais</h2>
+<ul id="listaAnimais"></ul>
+
+<h2>Cadastrar Novo Animal</h2>
+<form id="formAnimal">
+    <label for="tipo">Tipo:</label>
+    <input type="text" id="tipo" name="tipo" required>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <!-- Adicione outros campos do Animal conforme necessário -->
+    <button type="submit">Cadastrar Animal</button>
+</form>
+
+<h2>Buscar Animal por ID</h2>
+<input type="number" id="idAnimal" placeholder="ID do Animal">
+<button onclick="buscarAnimal()">Buscar</button>
+
+<script src="script.js"></script>
+</body>
+</html>
+
