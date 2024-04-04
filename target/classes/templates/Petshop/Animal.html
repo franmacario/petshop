@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Animais</title>
+</head>
+<body>
+    <h1>Lista de Animais</h1>
+    <table border="1">
+        <tr>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Raça</th>
+        </tr>
+        <tr th:each="animal : ${animais}">
+            <td th:text="${animal.nome}"></td>
+            <td th:text="${animal.tipo}"></td>
+            <td th:text="${animal.raca}"></td>
+        </tr>
+    </table>
+    <br/>
+    <a href="/animais/novo">Adicionar Animal</a>
+</body>
+</html>
