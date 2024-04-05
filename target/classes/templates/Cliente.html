@@ -5,77 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petshop - Clientes</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background-color: #5cb85c;
-            padding: 10px 0;
-        }
-
-        header h1 {
-            text-align: center;
-            color: #fff;
-            margin: 0;
-        }
-
-        main {
-            background-color: #f0f0f0;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .vertical-list {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        .vertical-list li {
-            margin-bottom: 10px;
-        }
-
-        .vertical-list li a {
-            display: block;
-            padding: 15px 30px;
-            background-color: #8b5a2b;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .vertical-list li a:hover {
-            background-color: #9e6d3f;
-        }
-
-        footer {
-            background-color: #5cb85c;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-    </style>
+    <link href="/static/css/Cliente.css" rel="stylesheet">
 </head>
 
 <body>
 <header>
     <h1>Petshop - Clientes</h1>
+    <a class="back-button" href="index.html">Voltar para o Início</a>
 </header>
 <main>
     <!-- Conteúdo da página de Clientes -->
     <h2>Listagem de Clientes</h2>
     <p>Aqui você pode visualizar a lista de clientes cadastrados.</p>
-    <a href="cadastro_cliente.html">Cadastrar Novo Cliente</a>
+    <a class="add-button" href="cadastro_cliente.html">Cadastrar Novo Cliente</a>
 </main>
-<footer>
-    <p>&copy; 2024 Petshop</p>
-</footer>
+<script src="/static/js/Cliente.js"></script>
 </body>
 
 </html>

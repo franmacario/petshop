@@ -19,15 +19,15 @@ import com.Gerenciamento.Petshop.service.AnimalService;
 public class AnimalController {
     private AnimalService animalService;
 
-    @GetMapping
-    public ResponseEntity<List<Animal>> listarAnimais(){
-        List<Animal> animais = animalService.listarAnimais();
-        return new ResponseEntity<>(animais, HttpStatus.OK);
-    }
     @PostMapping
     public ResponseEntity<Animal> cadastrarAnimal(@RequestBody Animal animal){
         Animal novoAnimal= animalService.cadastrarAnimal(animal);
         return new ResponseEntity<>(novoAnimal, HttpStatus.CREATED);
+    }
+    @GetMapping
+    public ResponseEntity<List<Animal>> listarAnimais(){
+        List<Animal> animais = animalService.listarAnimais();
+        return new ResponseEntity<>(animais, HttpStatus.OK);
     }
     @GetMapping("/{id}")
     public ResponseEntity<Animal> buscarAnimalPorId(@PathVariable Long id) {

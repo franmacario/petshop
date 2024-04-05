@@ -5,72 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Funcionários</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-
-        form {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        label,
-        input {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #5cb85c;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-right: 10px;
-        }
-
-        button:hover {
-            background-color: #4cae4c;
-        }
-
-        #listaFuncionarios {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #listaFuncionarios ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        #listaFuncionarios li {
-            margin-bottom: 10px;
-        }
-
-        #listaFuncionarios li span {
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/Funcionario.css" >
 </head>
 <header>
     <button class="back-button" onclick="window.location.href='index.html'">Voltar para o Início</button>
@@ -92,38 +27,7 @@
         <!-- Os funcionários serão listados dinamicamente aqui -->
     </ul>
 </div>
-
-
-<script>
-    function listarFuncionarios() {
-        fetch('/funcionarios')
-            .then(response => response.json())
-            .then(data => {
-                const lista = document.getElementById('lista');
-                lista.innerHTML = '';
-                data.forEach(funcionario => {
-                    const li = document.createElement('li');
-                    li.textContent = `${funcionario.nome} - ${funcionario.cargo}`;
-                    lista.appendChild(li);
-                });
-            });
-    }
-
-    document.getElementById('formFuncionario').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const formData = new FormData(this);
-        fetch('/funcionarios', {
-            method: 'POST',
-            body: formData
-        })
-            .then(response => response.json())
-            .then(data => {
-                alert('Funcionário cadastrado com sucesso!');
-                this.reset();
-            })
-            .catch(error => console.error('Erro ao cadastrar funcionário:', error));
-    });
-</script>
+<script src="/static/js/Funcionario.js"></script>
 </body>
 
 </html>

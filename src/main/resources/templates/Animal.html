@@ -5,81 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Animais</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-
-        header {
-            background-color: #5cb85c;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            margin-top: 0;
-        }
-
-        form label,
-        form input {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"],
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #8b5a2b;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #9e6d3f;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        li span {
-            font-weight: bold;
-        }
-    </style>
+    <link href="/static/css/Animal.css" rel="stylesheet">
 </head>
 
 <body>
 <header>
-
-
     <button class="back-button" onclick="window.location.href='index.html'">Voltar para o Início</button>
 </header>
 <main>
@@ -109,57 +39,12 @@
 
     <!-- Lista de Animais (inicialmente oculta) -->
     <ul id="listaAnimais" style="display: none;">
-        <li><span>Animal 1:</span> Cachorro</li>
-        <li><span>Animal 2:</span> Gato</li>
-        <li><span>Animal 3:</span> Pássaro</li>
+        <!-- Os animais cadastrados serão listados aqui -->
     </ul>
 </main>
 
-<script>
-    const formAnimal = document.getElementById('formAnimal');
-    const idAnimal = document.getElementById('idAnimal');
-    const listaAnimais = document.getElementById('listaAnimais');
-    const btnMostrarLista = document.getElementById('btnMostrarLista');
-
-    formAnimal.addEventListener('submit', (event) => {
-        event.preventDefault(); // Impede o envio padrão do formulário
-
-        // Obter os valores dos campos do formulário
-        const tipo = document.getElementById('tipo').value;
-        const nome = document.getElementById('nome').value;
-        const raca = document.getElementById('raca').value;
-        const idade = document.getElementById('idade').value;
-        const cliente = document.getElementById('cliente').value;
-
-        // Realizar o envio dos dados (simulado)
-        alert(`Dados do novo animal:
-Tipo: ${tipo}
-Nome: ${nome}
-Raça: ${raca}
-Idade: ${idade}
-Cliente: ${cliente}
-        `);
-
-        // Limpar os campos do formulário após o envio
-        formAnimal.reset();
-    });
-
-    function buscarAnimal() {
-        const id = idAnimal.value;
-        // Simular a busca por ID (exibir alerta com o ID buscado)
-        alert(`Buscando animal com ID ${id}`);
-    }
-
-    function toggleLista() {
-        if (listaAnimais.style.display === 'none') {
-            listaAnimais.style.display = 'block';
-            btnMostrarLista.textContent = 'Ocultar Lista de Animais';
-        } else {
-            listaAnimais.style.display = 'none';
-            btnMostrarLista.textContent = 'Mostrar Lista de Animais';
-        }
-    }
-</script>
+<script src="/static/js/Animal.js"></script>
 </body>
 
 </html>
+
