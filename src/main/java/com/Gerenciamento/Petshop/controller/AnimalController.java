@@ -4,12 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.Gerenciamento.Petshop.model.Animal;
 import com.Gerenciamento.Petshop.service.AnimalService;
@@ -19,10 +14,19 @@ import com.Gerenciamento.Petshop.service.AnimalService;
 public class AnimalController {
     private AnimalService animalService;
 
-    @PostMapping
-    public ResponseEntity<Animal> cadastrarAnimal(@RequestBody Animal animal){
-        Animal novoAnimal= animalService.cadastrarAnimal(animal);
-        return new ResponseEntity<>(novoAnimal, HttpStatus.CREATED);
+    @PostMapping("/cadastrar")
+    public String cadastrarAnimal(@RequestParam("tipo") String tipo,
+                                  @RequestParam("nome") String nome,
+                                  @RequestParam("raca") String raca,
+                                  @RequestParam("idade") int idade) {
+        Animal animal = new Animal(tipo, nome, raca, idade);
+        animalService.cadastrarAnimal(animal);
+        return "redirect:/Servico.html";
+    }
+
+    @GetMapping("/static/Servico.html")
+    public String redirectToOutraPagina() {
+        return "/static/Servico.html";
     }
     @GetMapping
     public ResponseEntity<List<Animal>> listarAnimais(){

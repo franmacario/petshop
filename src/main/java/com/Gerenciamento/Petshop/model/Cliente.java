@@ -19,6 +19,9 @@ public class Cliente {
     @OneToMany(mappedBy = "tutor")
     private List<Animal> animais;
 
+    public Cliente(String nome, String email, String telefone, String endereco) {
+    }
+
     public Long getId() {
         return id;
     }

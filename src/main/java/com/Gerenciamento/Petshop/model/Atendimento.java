@@ -26,7 +26,20 @@ public class Atendimento {
     @JoinColumn(name = "servico_id")
     private Servico servico;
 
+    public Atendimento(Long id, Funcionario funcionario, Cliente cliente, Animal animal, Servico servico, Date dataAtendimento) {
+        this.id = id;
+        this.funcionario = funcionario;
+        this.cliente = cliente;
+        this.animal = animal;
+        this.servico = servico;
+        this.dataAtendimento = dataAtendimento;
+    }
+
     private Date dataAtendimento;
+
+    public Atendimento() {
+
+    }
 
     public Long getId() {
         return id;

@@ -9,6 +9,10 @@ public class Funcionario {
     private Long id;
     private String nome;
     private String funcao;
+
+    public Funcionario(String nome, String cargo) {
+    }
+
     public Long getId() {
         return id;
     }

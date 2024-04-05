@@ -9,6 +9,9 @@ public class Servico {
     private Long id;
     private String nome;
 
+    public Servico(long l, String tosaHigiênica, double v) {
+    }
+
 
     public Long getId() {
         return id;

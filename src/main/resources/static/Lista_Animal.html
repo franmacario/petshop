@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petshop - Listagem de Animais</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #5cb85c;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    margin: 0;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8b5a2b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.back-button:hover {
+    background-color: #6e4724;
+}
+
+main {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+tfoot {
+    background-color: #f2f2f2;
+}
+
+footer {
+    background-color: #5cb85c;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Petshop - Listagem de Animais</h1>
+
+</header>
+<main>
+    <h2>Listagem de Animais</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Raça</th>
+            <th>Tutor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="animal : ${animais}">
+            <td th:text="${animal.id}">1</td>
+            <td th:text="${animal.tipo}">Cachorro</td>
+            <td th:text="${animal.nome}">Rex</td>
+            <td th:text="${animal.idade}">5</td>
+            <td th:text="${animal.raca}">Golden Retriever</td>
+            <td th:text="${animal.tutor.nome}">João Silva</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+<a class="back-button" href="index.html">Voltar para o Início</a>
+
+</body>
+
+</html>

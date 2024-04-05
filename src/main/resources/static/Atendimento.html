@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Atendimento</title>
+    <style>
+        /* Estilos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #5cb85c;
+        }
+
+        .info-section {
+            margin-bottom: 20px;
+        }
+
+        .info-label {
+            font-weight: bold;
+        }
+
+        .info-value {
+            margin-left: 10px;
+        }
+
+        .back-button {
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Detalhes do Atendimento</h1>
+
+    <div class="info-section">
+        <span class="info-label">ID:</span>
+        <span class="info-value">1</span>
+    </div>
+
+    <div class="info-section">
+        <span class="info-label">Funcionário:</span>
+        <span class="info-value">Nome do Funcionário</span>
+    </div>
+
+    <div class="info-section">
+        <span class="info-label">Cliente:</span>
+        <span class="info-value">Nome do Cliente</span>
+    </div>
+
+    <div class="info-section">
+        <span class="info-label">Animal:</span>
+        <span class="info-value">Nome do Animal</span>
+    </div>
+
+    <div class="info-section">
+        <span class="info-label">Serviço:</span>
+        <span class="info-value">Nome do Serviço</span>
+    </div>
+
+    <button class="back-button" onclick="window.location.href='index.html'">Voltar para o Início</button>
+</div>
+</body>
+
+</html>

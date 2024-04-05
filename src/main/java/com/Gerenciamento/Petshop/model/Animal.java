@@ -18,6 +18,9 @@ public class Animal {
     @JoinColumn(name = "cliente_id")
     private Cliente tutor;
 
+    public Animal(String tipo, String nome, String raca, int idade) {
+    }
+
     public Long getId() {
         return id;
     }
